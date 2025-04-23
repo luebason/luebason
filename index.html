@@ -5,40 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lue Bason</title>
   <style>
-    html, body {
+    body {
       margin: 0;
       padding: 0;
-      height: 100%;
-      overflow: hidden;
+      font-family: Arial, sans-serif;
       background-color: black;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
     }
 
-    .video-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      overflow: hidden;
-      z-index: -1;
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      padding: 20px;
     }
 
-    .video-container iframe {
-      width: 100vw;
-      height: 100vh;
-      border: none;
+    a {
+      text-decoration: none;
+      color: white;
+      background-color: #1c1c1c;
+      padding: 12px 24px;
+      border: 1px solid #fff;
+      border-radius: 6px;
+      font-size: 16px;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    a:hover {
+      background-color: white;
+      color: black;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 500px) {
+      a {
+        font-size: 14px;
+        padding: 10px 20px;
+      }
     }
   </style>
 </head>
 <body>
-
-  <div class="video-container">
-    <iframe
-      src="https://www.youtube.com/embed/7efmygyixs4?autoplay=1&mute=1&controls=0&loop=1&playlist=7efmygyixs4&modestbranding=1&rel=0&playsinline=1"
-      allow="autoplay"
-      allowfullscreen>
-    </iframe>
+  <div class="container">
+    <a href="https://www.youtube.com/channel/UCBDdan71rYFXtn0HCyUNDjw" target="_blank">YouTube</a>
+    <a href="https://open.spotify.com/artist/2mqKQs2rda8YbfITznRl1t?si=l8ZOQlg6TmK1AisCUVa0Rg" target="_blank">Spotify</a>
+    <a href="https://music.apple.com/de/artist/lue-bason/1548498115?l=en-GB" target="_blank">Apple Music</a>
+    <a href="https://www.instagram.com/loudgio/" target="_blank">Instagram</a>
+    <a href="https://www.tiktok.com/@luebason" target="_blank">TikTok</a>
   </div>
-
 </body>
 </html>
