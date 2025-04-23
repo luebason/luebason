@@ -16,7 +16,7 @@
       align-items: center;
       height: 100vh;
       text-align: center;
-      overflow: hidden; /* Prevent scrollbars */
+      overflow: hidden;
     }
 
     .container {
@@ -25,18 +25,25 @@
       gap: 15px;
       padding: 20px;
       background-image: url('https://raw.githubusercontent.com/luebason/luebason/main/BG1.jpg');
-      background-size: cover; /* Make background image cover the screen */
+      background-size: cover; /* Full screen background image */
       background-position: center;
       background-repeat: no-repeat;
-      width: 80vw; /* Adjusted for sleekness */
-      height: auto; /* Height should adjust based on content */
-      max-width: 600px; /* Limit the max width for a neat look */
-      max-height: 90vh; /* Ensure the container doesn't overflow */
-      border-radius: 10px; /* Optional: adds rounded corners */
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      position: absolute; /* Make it cover the entire page */
+      top: 0;
+      left: 0;
+      z-index: -1; /* Keep the image behind the buttons */
+    }
+
+    .button-container {
+      position: relative; /* To layer on top of the background */
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center; /* Ensures buttons are centered */
+      gap: 15px;
+      padding: 20px;
+      text-align: center;
+      z-index: 1;
     }
 
     a {
@@ -48,6 +55,9 @@
       border-radius: 6px;
       font-size: 16px;
       transition: background-color 0.3s, transform 0.2s;
+      width: 200px; /* Fixed button width */
+      display: inline-block; /* Make sure all buttons have same width */
+      text-align: center;
     }
 
     a:hover {
@@ -65,7 +75,8 @@
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="container"></div> <!-- Full screen background image -->
+  <div class="button-container">
     <a href="https://www.youtube.com/channel/UCBDdan71rYFXtn0HCyUNDjw" target="_blank">YouTube</a>
     <a href="https://open.spotify.com/artist/2mqKQs2rda8YbfITznRl1t?si=l8ZOQlg6TmK1AisCUVa0Rg" target="_blank">Spotify</a>
     <a href="https://music.apple.com/de/artist/lue-bason/1548498115?l=en-GB" target="_blank">Apple Music</a>
