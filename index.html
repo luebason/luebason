@@ -5,9 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lue Bason</title>
   <link rel="icon" href="https://github.com/luebason/luebason/blob/main/fivvi.png?raw=true" type="image/png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     * {
@@ -19,46 +16,41 @@
       padding: 0;
       height: 100%;
       font-family: Arial, sans-serif;
+      overflow-x: hidden;
     }
 
     body {
       background: url('https://github.com/luebason/luebason/blob/main/BGBACK.jpg?raw=true') no-repeat center center fixed;
       background-size: cover;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
       color: white;
       text-align: center;
     }
 
-    /* Header Styling */
     header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      background-color: rgba(0, 0, 0, 0.4); /* Transparent black */
+      background-color: rgba(0, 0, 0, 0.4);
       padding: 20px 0;
       z-index: 1000;
     }
 
     header h1 {
       font-family: 'Bebas Neue', sans-serif;
-      color: white;
       font-size: 36px;
+      color: white;
       margin: 0;
-      text-align: center;
-      text-transform: uppercase; /* Force ALL CAPS */
+      text-transform: uppercase;
     }
 
     .main-content {
-      flex: 1;
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 20px;
       position: relative;
-      margin-top: 100px;
+      z-index: 1;
     }
 
     .coming-soon-container {
@@ -104,21 +96,44 @@
     .coming-soon-text span:nth-child(12) { transform: rotate(330deg) translateY(-120px); }
 
     @keyframes rotate-text {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .video-section {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .video-wrapper {
+      width: 90%;
+      max-width: 1000px;
+      aspect-ratio: 16/9;
+      border: 5px solid white;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+    }
+
+    .video-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
     }
 
     .icon-bar {
+      position: fixed;
+      bottom: 80px;
+      width: 100%;
       display: flex;
       justify-content: center;
       gap: 30px;
       padding: 20px;
       background-color: rgba(0, 0, 0, 0.4);
       flex-wrap: wrap;
+      z-index: 999;
     }
 
     .icon-bar a {
@@ -133,6 +148,9 @@
     }
 
     .legal-footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
       padding: 10px 20px 30px;
       font-size: 12px;
       background-color: rgba(0, 0, 0, 0.3);
@@ -140,6 +158,7 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
+      z-index: 999;
     }
 
     .legal-footer a {
@@ -173,16 +192,21 @@
         font-size: 28px;
       }
     }
+
+    /* Hide animation when scrolling */
+    .main-content.hidden {
+      display: none;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
   <header>
     <h1>Lue Bason</h1>
   </header>
 
-  <div class="main-content">
+  <!-- COMING SOON Section -->
+  <div class="main-content" id="comingSoon">
     <div class="coming-soon-container">
       <div class="coming-soon-text">
         <span>C</span>
@@ -200,23 +224,42 @@
     </div>
   </div>
 
-  <footer>
-    <div class="icon-bar">
-      <a href="https://www.youtube.com/channel/UCBDdan71rYFXtn0HCyUNDjw" target="_blank"><i class="fab fa-youtube"></i></a>
-      <a href="https://open.spotify.com/artist/2mqKQs2rda8YbfITznRl1t?si=l8ZOQlg6TmK1AisCUVa0Rg" target="_blank"><i class="fab fa-spotify"></i></a>
-      <a href="https://music.apple.com/de/artist/lue-bason/1548498115?l=en-GB" target="_blank"><i class="fab fa-apple"></i></a>
-      <a href="https://www.instagram.com/loudgio/" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.tiktok.com/@luebason" target="_blank"><i class="fab fa-tiktok"></i></a>
-      <a href="https://linktr.ee/luebason" target="_blank"><i class="fas fa-eye"></i></a>
+  <!-- VIDEO SECTION -->
+  <div class="video-section" id="videoSection">
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/7efmygyixs4?rel=0&modestbranding=1" allowfullscreen></iframe>
     </div>
+  </div>
 
-    <div class="legal-footer">
-      <a href="terms.html" target="_blank">TERMS</a>
-      <a href="privacy.html" target="_blank">PRIVACY</a>
-      <a href="do-not-sell.html" target="_blank">DO NOT SELL MY PERSONAL INFORMATION</a>
-      <a href="cookies.html" target="_blank">COOKIE CHOICES</a>
-    </div>
-  </footer>
+  <!-- SOCIAL ICONS -->
+  <div class="icon-bar">
+    <a href="https://www.youtube.com/channel/UCBDdan71rYFXtn0HCyUNDjw" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://open.spotify.com/artist/2mqKQs2rda8YbfITznRl1t?si=l8ZOQlg6TmK1AisCUVa0Rg" target="_blank"><i class="fab fa-spotify"></i></a>
+    <a href="https://music.apple.com/de/artist/lue-bason/1548498115?l=en-GB" target="_blank"><i class="fab fa-apple"></i></a>
+    <a href="https://www.instagram.com/loudgio/" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.tiktok.com/@luebason" target="_blank"><i class="fab fa-tiktok"></i></a>
+    <a href="https://linktr.ee/luebason" target="_blank"><i class="fas fa-eye"></i></a>
+  </div>
+
+  <!-- LEGAL FOOTER -->
+  <div class="legal-footer">
+    <a href="terms.html" target="_blank">TERMS</a>
+    <a href="privacy.html" target="_blank">PRIVACY</a>
+    <a href="do-not-sell.html" target="_blank">DO NOT SELL MY PERSONAL INFORMATION</a>
+    <a href="cookies.html" target="_blank">COOKIE CHOICES</a>
+  </div>
+
+  <script>
+    const comingSoon = document.getElementById('comingSoon');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > window.innerHeight / 3) {
+        comingSoon.classList.add('hidden');
+      } else {
+        comingSoon.classList.remove('hidden');
+      }
+    });
+  </script>
 
 </body>
 </html>
