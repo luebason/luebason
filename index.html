@@ -19,23 +19,25 @@
       padding: 0;
       height: 100%;
       font-family: Arial, sans-serif;
-      scroll-behavior: smooth;
-      overflow-x: hidden;
     }
 
     body {
       background: url('https://github.com/luebason/luebason/blob/main/BGBACK.jpg?raw=true') no-repeat center center fixed;
       background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       color: white;
       text-align: center;
     }
 
+    /* Header Styling */
     header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      background-color: rgba(0, 0, 0, 0.4);
+      background-color: rgba(0, 0, 0, 0.4); /* Transparent black */
       padding: 20px 0;
       z-index: 1000;
     }
@@ -46,15 +48,17 @@
       font-size: 36px;
       margin: 0;
       text-align: center;
-      letter-spacing: 2px;
+      text-transform: uppercase; /* Force ALL CAPS */
     }
 
-    .section {
-      height: 100vh;
+    .main-content {
+      flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
-      flex-direction: column;
+      padding: 20px;
+      position: relative;
+      margin-top: 100px;
     }
 
     .coming-soon-container {
@@ -100,17 +104,12 @@
     .coming-soon-text span:nth-child(12) { transform: rotate(330deg) translateY(-120px); }
 
     @keyframes rotate-text {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    .video-frame {
-      width: 90vw;
-      max-width: 1200px;
-      aspect-ratio: 16/9;
-      border: 8px solid white;
-      box-shadow: 0 0 20px rgba(255,255,255,0.2);
-      margin-top: 40px;
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
     }
 
     .icon-bar {
@@ -120,10 +119,6 @@
       padding: 20px;
       background-color: rgba(0, 0, 0, 0.4);
       flex-wrap: wrap;
-      position: fixed;
-      bottom: 60px;
-      width: 100%;
-      z-index: 999;
     }
 
     .icon-bar a {
@@ -140,14 +135,11 @@
     .legal-footer {
       padding: 10px 20px 30px;
       font-size: 12px;
+      background-color: rgba(0, 0, 0, 0.3);
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background: none;
     }
 
     .legal-footer a {
@@ -185,59 +177,46 @@
 </head>
 <body>
 
+  <!-- Header -->
   <header>
-    <h1>LUE BASON</h1>
+    <h1>Lue Bason</h1>
   </header>
 
-  <!-- Section 1: Coming Soon -->
-  <section class="section">
+  <div class="main-content">
     <div class="coming-soon-container">
       <div class="coming-soon-text">
-        <span>C</span><span>O</span><span>M</span><span>I</span><span>N</span><span>G</span><span>&nbsp;</span><span>S</span><span>O</span><span>O</span><span>N</span>
+        <span>C</span>
+        <span>O</span>
+        <span>M</span>
+        <span>I</span>
+        <span>N</span>
+        <span>G</span>
+        <span>&nbsp;</span>
+        <span>S</span>
+        <span>O</span>
+        <span>O</span>
+        <span>N</span>
       </div>
     </div>
-  </section>
-
-  <!-- Section 2: Video 1 -->
-  <section class="section">
-    <iframe class="video-frame" src="https://www.youtube.com/embed/7efmygyixs4" frameborder="0" allowfullscreen></iframe>
-  </section>
-
-  <!-- Section 3: Video 2 -->
-  <section class="section">
-    <iframe class="video-frame" src="https://www.youtube.com/embed/9WiLWis74eU" frameborder="0" allowfullscreen></iframe>
-  </section>
-
-  <!-- Section 4: Video 3 -->
-  <section class="section">
-    <iframe class="video-frame" src="https://www.youtube.com/embed/Y24zDX5X8YA" frameborder="0" allowfullscreen></iframe>
-  </section>
-
-  <!-- Section 5: Video 4 -->
-  <section class="section">
-    <iframe class="video-frame" src="https://www.youtube.com/embed/iKK6KVLW-is" frameborder="0" allowfullscreen></iframe>
-  </section>
-
-  <!-- Section 6: Video 5 -->
-  <section class="section">
-    <iframe class="video-frame" src="https://www.youtube.com/embed/CTojTeAX8Hw" frameborder="0" allowfullscreen></iframe>
-  </section>
-
-  <div class="icon-bar">
-    <a href="https://www.youtube.com/channel/UCBDdan71rYFXtn0HCyUNDjw" target="_blank"><i class="fab fa-youtube"></i></a>
-    <a href="https://open.spotify.com/artist/2mqKQs2rda8YbfITznRl1t?si=l8ZOQlg6TmK1AisCUVa0Rg" target="_blank"><i class="fab fa-spotify"></i></a>
-    <a href="https://music.apple.com/de/artist/lue-bason/1548498115?l=en-GB" target="_blank"><i class="fab fa-apple"></i></a>
-    <a href="https://www.instagram.com/loudgio/" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.tiktok.com/@luebason" target="_blank"><i class="fab fa-tiktok"></i></a>
-    <a href="https://linktr.ee/luebason" target="_blank"><i class="fas fa-eye"></i></a>
   </div>
 
-  <div class="legal-footer">
-    <a href="terms.html" target="_blank">TERMS</a>
-    <a href="privacy.html" target="_blank">PRIVACY</a>
-    <a href="do-not-sell.html" target="_blank">DO NOT SELL MY PERSONAL INFORMATION</a>
-    <a href="cookies.html" target="_blank">COOKIE CHOICES</a>
-  </div>
+  <footer>
+    <div class="icon-bar">
+      <a href="https://www.youtube.com/channel/UCBDdan71rYFXtn0HCyUNDjw" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://open.spotify.com/artist/2mqKQs2rda8YbfITznRl1t?si=l8ZOQlg6TmK1AisCUVa0Rg" target="_blank"><i class="fab fa-spotify"></i></a>
+      <a href="https://music.apple.com/de/artist/lue-bason/1548498115?l=en-GB" target="_blank"><i class="fab fa-apple"></i></a>
+      <a href="https://www.instagram.com/loudgio/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@luebason" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://linktr.ee/luebason" target="_blank"><i class="fas fa-eye"></i></a>
+    </div>
+
+    <div class="legal-footer">
+      <a href="terms.html" target="_blank">TERMS</a>
+      <a href="privacy.html" target="_blank">PRIVACY</a>
+      <a href="do-not-sell.html" target="_blank">DO NOT SELL MY PERSONAL INFORMATION</a>
+      <a href="cookies.html" target="_blank">COOKIE CHOICES</a>
+    </div>
+  </footer>
 
 </body>
 </html>
