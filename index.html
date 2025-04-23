@@ -4,109 +4,114 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lue Bason</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    html, body {
+    body {
       margin: 0;
       padding: 0;
-      height: 100%;
       font-family: Arial, sans-serif;
-    }
-
-    body {
       background: url('https://github.com/luebason/luebason/blob/main/BG1.jpg?raw=true') no-repeat center center fixed;
       background-size: cover;
+      color: white;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      color: white;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
       text-align: center;
     }
 
-    .main-content {
-      flex: 1;
+    .container {
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-      padding: 20px;
+      gap: 20px;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 90%;
     }
 
-    .video-container {
-      position: relative;
-      width: 80%;
-      max-width: 800px;
-      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-      height: 0;
-      border: 3px solid rgba(255, 255, 255, 0.5);
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-    }
-
-    .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    .icon-bar {
+    .social-icons {
       display: flex;
+      gap: 20px;
+      margin-top: 30px;
       justify-content: center;
-      gap: 30px;
-      padding: 20px;
-      background-color: rgba(0, 0, 0, 0.4);
       flex-wrap: wrap;
     }
 
-    .icon-bar a {
-      color: white;
-      font-size: 24px;
-      transition: transform 0.2s, color 0.3s;
+    .social-icons a img {
+      width: 32px;
+      height: 32px;
+      transition: transform 0.3s ease;
     }
 
-    .icon-bar a:hover {
+    .social-icons a img:hover {
       transform: scale(1.2);
-      color: #ccc;
+    }
+
+    iframe {
+      border: 3px solid white;
+      border-radius: 10px;
+      width: 90vw;
+      max-width: 640px;
+      height: 360px;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      border-bottom: 1px solid white;
     }
 
     @media (max-width: 600px) {
-      .video-container {
-        width: 90%;
+      iframe {
+        height: 200px;
       }
 
-      .icon-bar {
-        gap: 20px;
-        padding: 16px;
-      }
-
-      .icon-bar a {
-        font-size: 20px;
+      .social-icons a img {
+        width: 28px;
+        height: 28px;
       }
     }
   </style>
 </head>
 <body>
+  <div class="container">
+    <iframe src="https://www.youtube.com/embed/7efmygyixs4" title="YouTube video" frameborder="0" allowfullscreen></iframe>
 
-  <div class="main-content">
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/7efmygyixs4" title="YouTube video" allowfullscreen></iframe>
+    <div class="social-icons">
+      <a href="https://www.youtube.com/channel/UCBDdan71rYFXtn0HCyUNDjw" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" />
+      </a>
+      <a href="https://open.spotify.com/artist/2mqKQs2rda8YbfITznRl1t?si=l8ZOQlg6TmK1AisCUVa0Rg" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111624.png" alt="Spotify" />
+      </a>
+      <a href="https://music.apple.com/de/artist/lue-bason/1548498115?l=en-GB" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/831/831276.png" alt="Apple Music" />
+      </a>
+      <a href="https://www.instagram.com/loudgio/" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" />
+      </a>
+      <a href="https://www.tiktok.com/@luebason" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046122.png" alt="TikTok" />
+      </a>
     </div>
+
+    <footer>
+      <a href="terms.html">TERMS</a>
+      <a href="privacy.html">PRIVACY</a>
+      <a href="do-not-sell.html">DO NOT SELL MY PERSONAL INFORMATION</a>
+      <a href="cookies.html">COOKIE CHOICES</a>
+    </footer>
   </div>
-
-  <footer class="icon-bar">
-    <a href="https://www.youtube.com/channel/UCBDdan71rYFXtn0HCyUNDjw" target="_blank"><i class="fab fa-youtube"></i></a>
-    <a href="https://open.spotify.com/artist/2mqKQs2rda8YbfITznRl1t?si=l8ZOQlg6TmK1AisCUVa0Rg" target="_blank"><i class="fab fa-spotify"></i></a>
-    <a href="https://music.apple.com/de/artist/lue-bason/1548498115?l=en-GB" target="_blank"><i class="fab fa-apple"></i></a>
-    <a href="https://www.instagram.com/loudgio/" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.tiktok.com/@luebason" target="_blank"><i class="fab fa-tiktok"></i></a>
-  </footer>
-
 </body>
 </html>
