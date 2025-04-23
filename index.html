@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lue Bason</title>
   <style>
     html, body {
@@ -10,40 +10,32 @@
       padding: 0;
       height: 100%;
       overflow: hidden;
-      font-family: Arial, sans-serif;
       background-color: black;
     }
 
-    .video-background {
+    .video-container {
       position: fixed;
       top: 0;
       left: 0;
-      height: 100vh;
       width: 100vw;
+      height: 100vh;
       overflow: hidden;
       z-index: -1;
     }
 
-    .video-background iframe {
-      position: absolute;
-      top: 50%;
-      left: 50%;
+    .video-container iframe {
       width: 100vw;
-      height: 56.25vw; /* 16:9 ratio */
-      min-height: 100vh;
-      min-width: 177.77vh; /* 16:9 ratio */
-      transform: translate(-50%, -50%);
-      pointer-events: none;
+      height: 100vh;
+      border: none;
     }
   </style>
 </head>
 <body>
 
-  <div class="video-background">
+  <div class="video-container">
     <iframe
-      src="https://www.youtube.com/embed/7efmygyixs4?autoplay=1&mute=1&controls=0&loop=1&playlist=7efmygyixs4&modestbranding=1&showinfo=0"
-      frameborder="0"
-      allow="autoplay; encrypted-media"
+      src="https://www.youtube.com/embed/7efmygyixs4?autoplay=1&mute=1&controls=0&loop=1&playlist=7efmygyixs4&modestbranding=1&rel=0&playsinline=1"
+      allow="autoplay"
       allowfullscreen>
     </iframe>
   </div>
