@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lue Bason</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     * {
       box-sizing: border-box;
@@ -78,31 +78,25 @@
       color: #ccc;
     }
 
-    .social-links {
-      position: absolute;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 10;
+    .legal-footer {
+      padding: 10px 20px 30px;
+      font-size: 14px;
+      background-color: rgba(0, 0, 0, 0.3);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
     }
 
-    .legal-links {
-      font-size: 12px;
-      text-transform: uppercase;
-      position: absolute;
-      bottom: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 10;
-      padding: 10px;
-      background-color: rgba(0, 0, 0, 0.5);
-      width: 100%;
-      text-align: center;
-    }
-
-    .legal-links a {
+    .legal-footer a {
       color: white;
-      margin: 0 10px;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s;
+    }
+
+    .legal-footer a:hover {
+      border-color: white;
     }
 
     @media (max-width: 600px) {
@@ -115,8 +109,10 @@
         font-size: 20px;
       }
 
-      .legal-links {
-        font-size: 10px;
+      .legal-footer {
+        font-size: 12px;
+        gap: 15px;
+        padding: 10px 10px 25px;
       }
     }
   </style>
@@ -127,22 +123,22 @@
     <div class="loading-container"></div>
   </div>
 
-  <div class="social-links">
-    <footer class="icon-bar">
+  <footer>
+    <div class="icon-bar">
       <a href="https://www.youtube.com/channel/UCBDdan71rYFXtn0HCyUNDjw" target="_blank"><i class="fab fa-youtube"></i></a>
       <a href="https://open.spotify.com/artist/2mqKQs2rda8YbfITznRl1t?si=l8ZOQlg6TmK1AisCUVa0Rg" target="_blank"><i class="fab fa-spotify"></i></a>
       <a href="https://music.apple.com/de/artist/lue-bason/1548498115?l=en-GB" target="_blank"><i class="fab fa-apple"></i></a>
       <a href="https://www.instagram.com/loudgio/" target="_blank"><i class="fab fa-instagram"></i></a>
       <a href="https://www.tiktok.com/@luebason" target="_blank"><i class="fab fa-tiktok"></i></a>
-    </footer>
-  </div>
+    </div>
 
-  <div class="legal-links">
-    <a href="terms.html" target="_blank">Terms</a>
-    <a href="privacy.html" target="_blank">Privacy</a>
-    <a href="do-not-sell.html" target="_blank">Do not sell my personal information</a>
-    <a href="cookie-choices.html" target="_blank">Cookie choices</a>
-  </div>
+    <div class="legal-footer">
+      <a href="terms.html" target="_blank">TERMS</a>
+      <a href="privacy.html" target="_blank">PRIVACY</a>
+      <a href="do-not-sell.html" target="_blank">DO NOT SELL MY PERSONAL INFORMATION</a>
+      <a href="cookies.html" target="_blank">COOKIE CHOICES</a>
+    </div>
+  </footer>
 
 </body>
 </html>
