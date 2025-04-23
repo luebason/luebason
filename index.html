@@ -16,6 +16,7 @@
       align-items: center;
       height: 100vh;
       text-align: center;
+      overflow: hidden; /* Optional: prevent scrollbars */
     }
 
     .container {
@@ -23,11 +24,14 @@
       flex-direction: column;
       gap: 15px;
       padding: 20px;
-      background-image: url('https://raw.githubusercontent.com/luebason/luebason/main/BG1.jpg'); /* Raw URL */
-      background-size: cover;
+      background-image: url('https://raw.githubusercontent.com/luebason/luebason/main/BG1.jpg');
+      background-size: cover; /* Make the background image cover the entire screen */
       background-position: center;
       background-repeat: no-repeat;
-      border-radius: 10px; /* Optional: add a radius for rounded corners */
+      width: 100vw; /* Ensure the container spans the full width */
+      height: 100vh; /* Ensure the container spans the full height */
+      border-radius: 10px; /* Optional: add rounded corners */
+      backdrop-filter: blur(5px); /* Optional: adds a blur effect behind the buttons */
     }
 
     a {
