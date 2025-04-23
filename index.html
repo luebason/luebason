@@ -6,6 +6,7 @@
   <title>Lue Bason</title>
   <link rel="icon" href="https://github.com/luebason/luebason/blob/main/fivvi.png?raw=true" type="image/png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
@@ -16,46 +17,37 @@
       padding: 0;
       height: 100%;
       font-family: Arial, sans-serif;
-    }
-
-    body {
       background: url('https://github.com/luebason/luebason/blob/main/BGBACK.jpg?raw=true') no-repeat center center fixed;
       background-size: cover;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
       color: white;
-      text-align: center;
+      overflow-x: hidden;
     }
 
-    /* Header Styling */
     header {
       position: fixed;
       top: 0;
-      left: 0;
       width: 100%;
-      background-color: rgba(0, 0, 0, 0.4); /* More transparent black */
+      background-color: rgba(0, 0, 0, 0.2);
       padding: 20px 0;
       z-index: 1000;
+      text-align: center;
     }
 
     header h1 {
       font-family: 'Bebas Neue', sans-serif;
-      color: white;
       font-size: 36px;
+      color: white;
+      letter-spacing: 2px;
       margin: 0;
-      text-align: center;
-      text-transform: uppercase;
     }
 
     .main-content {
-      flex: 1;
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 20px;
-      position: relative;
-      margin-top: 100px;
+      flex-direction: column;
+      transition: opacity 0.5s ease;
     }
 
     .coming-soon-container {
@@ -105,13 +97,42 @@
       100% { transform: rotate(360deg); }
     }
 
+    .video-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 100vh 0 50px;
+    }
+
+    .video-wrapper {
+      width: 90%;
+      max-width: 900px;
+      border: 5px solid white;
+      margin: 100px auto;
+      position: relative;
+      padding-top: 56.25%;
+      box-sizing: border-box;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
     .icon-bar {
+      position: fixed;
+      bottom: 60px;
+      width: 100%;
       display: flex;
       justify-content: center;
       gap: 30px;
       padding: 20px;
       background-color: rgba(0, 0, 0, 0.4);
       flex-wrap: wrap;
+      z-index: 999;
     }
 
     .icon-bar a {
@@ -126,12 +147,17 @@
     }
 
     .legal-footer {
-      padding: 10px 20px 30px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
       font-size: 12px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
+      background: none;
+      padding: 10px 20px;
+      z-index: 999;
     }
 
     .legal-footer a {
@@ -143,31 +169,6 @@
 
     .legal-footer a:hover {
       border-color: white;
-    }
-
-    /* Video Container */
-    .video-container {
-      position: absolute;
-      top: 150px; /* Positioned slightly higher on desktop */
-      width: 80%;
-      max-width: 1200px;
-      height: 0;
-      padding-bottom: 56.25%;
-      background-color: #fff;
-      border: 5px solid white;
-      box-sizing: border-box;
-      display: none;
-    }
-
-    .video-container iframe {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-    }
-
-    /* Scroll to Show Video */
-    .show-video {
-      display: block;
     }
 
     @media (max-width: 600px) {
@@ -183,113 +184,68 @@
       .legal-footer {
         font-size: 8px;
         gap: 15px;
-        padding: 10px 10px 25px;
+        padding: 10px;
       }
 
       header h1 {
         font-size: 28px;
-      }
-
-      .video-container {
-        position: static;
-        margin-top: 80px;
-        padding-bottom: 56.25%;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
   <header>
-    <h1>Lue Bason</h1>
+    <h1>LUE BASON</h1>
   </header>
 
-  <div class="main-content">
+  <div class="main-content" id="mainContent">
     <div class="coming-soon-container">
       <div class="coming-soon-text">
-        <span>C</span>
-        <span>O</span>
-        <span>M</span>
-        <span>I</span>
-        <span>N</span>
-        <span>G</span>
-        <span>&nbsp;</span>
-        <span>S</span>
-        <span>O</span>
-        <span>O</span>
-        <span>N</span>
+        <span>C</span><span>O</span><span>M</span><span>I</span><span>N</span><span>G</span>
+        <span>&nbsp;</span><span>S</span><span>O</span><span>O</span><span>N</span>
       </div>
     </div>
   </div>
 
-  <!-- YouTube Video 1 -->
-  <div class="video-container" id="video1">
-    <iframe src="https://www.youtube.com/embed/7efmygyixs4" frameborder="0" allowfullscreen></iframe>
-  </div>
-
-  <!-- YouTube Video 2 -->
-  <div class="video-container" id="video2">
-    <iframe src="https://www.youtube.com/embed/9WiLWis74eU" frameborder="0" allowfullscreen></iframe>
-  </div>
-
-  <!-- YouTube Video 3 -->
-  <div class="video-container" id="video3">
-    <iframe src="https://www.youtube.com/embed/Y24zDX5X8YA" frameborder="0" allowfullscreen></iframe>
-  </div>
-
-  <!-- YouTube Video 4 -->
-  <div class="video-container" id="video4">
-    <iframe src="https://www.youtube.com/embed/iKK6KVLW-is" frameborder="0" allowfullscreen></iframe>
-  </div>
-
-  <!-- YouTube Video 5 -->
-  <div class="video-container" id="video5">
-    <iframe src="https://www.youtube.com/embed/CTojTeAX8Hw" frameborder="0" allowfullscreen></iframe>
-  </div>
-
-  <footer>
-    <div class="icon-bar">
-      <a href="https://www.youtube.com/channel/UCBDdan71rYFXtn0HCyUNDjw" target="_blank"><i class="fab fa-youtube"></i></a>
-      <a href="https://open.spotify.com/artist/2mqKQs2rda8YbfITznRl1t?si=l8ZOQlg6TmK1AisCUVa0Rg" target="_blank"><i class="fab fa-spotify"></i></a>
-      <a href="https://music.apple.com/de/artist/lue-bason/1548498115?l=en-GB" target="_blank"><i class="fab fa-apple"></i></a>
-      <a href="https://www.instagram.com/loudgio/" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.tiktok.com/@luebason" target="_blank"><i class="fab fa-tiktok"></i></a>
-      <a href="https://linktr.ee/luebason" target="_blank"><i class="fas fa-eye"></i></a>
+  <div class="video-section">
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/7efmygyixs4" title="YouTube video" frameborder="0" allowfullscreen></iframe>
     </div>
-
-    <div class="legal-footer">
-      <a href="terms.html" target="_blank">TERMS</a>
-      <a href="privacy.html" target="_blank">PRIVACY</a>
-      <a href="do-not-sell.html" target="_blank">DO NOT SELL MY PERSONAL INFORMATION</a>
-      <a href="cookies.html" target="_blank">COOKIE CHOICES</a>
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/9WiLWis74eU" title="YouTube video" frameborder="0" allowfullscreen></iframe>
     </div>
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/Y24zDX5X8YA" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/iKK6KVLW-is" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/CTojTeAX8Hw" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <div class="icon-bar">
+    <a href="https://www.youtube.com/channel/UCBDdan71rYFXtn0HCyUNDjw" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://open.spotify.com/artist/2mqKQs2rda8YbfITznRl1t?si=l8ZOQlg6TmK1AisCUVa0Rg" target="_blank"><i class="fab fa-spotify"></i></a>
+    <a href="https://music.apple.com/de/artist/lue-bason/1548498115?l=en-GB" target="_blank"><i class="fab fa-apple"></i></a>
+    <a href="https://www.instagram.com/loudgio/" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.tiktok.com/@luebason" target="_blank"><i class="fab fa-tiktok"></i></a>
+    <a href="https://linktr.ee/luebason" target="_blank"><i class="fas fa-eye"></i></a>
+  </div>
+
+  <footer class="legal-footer">
+    <a href="terms.html" target="_blank">TERMS</a>
+    <a href="privacy.html" target="_blank">PRIVACY</a>
+    <a href="do-not-sell.html" target="_blank">DO NOT SELL MY PERSONAL INFORMATION</a>
+    <a href="cookies.html" target="_blank">COOKIE CHOICES</a>
   </footer>
 
   <script>
-    let currentVideo = 0;
-    let videos = document.querySelectorAll('.video-container');
-
-    window.addEventListener('scroll', function() {
-      let scrollPosition = window.scrollY;
-
-      // Show next video when scrolled past the previous one
-      if (scrollPosition > 600 * (currentVideo + 1)) {
-        if (currentVideo < videos.length - 1) {
-          videos[currentVideo].classList.remove('show-video');
-          currentVideo++;
-          videos[currentVideo].classList.add('show-video');
-        }
-      }
-
-      // Hide current video when scrolled back up
-      if (scrollPosition < 600 * currentVideo) {
-        videos[currentVideo].classList.remove('show-video');
-        if (currentVideo > 0) {
-          currentVideo--;
-          videos[currentVideo].classList.add('show-video');
-        }
-      }
+    const mainContent = document.getElementById('mainContent');
+    window.addEventListener('scroll', () => {
+      mainContent.style.opacity = window.scrollY < window.innerHeight / 2 ? '1' : '0';
     });
   </script>
 
