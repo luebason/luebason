@@ -6,6 +6,7 @@
   <title>Lue Bason</title>
   <link rel="icon" href="https://github.com/luebason/luebason/blob/main/fivvi.png?raw=true" type="image/png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> <!-- Added Bebas Neue font -->
   <style>
     * {
       box-sizing: border-box;
@@ -26,6 +27,26 @@
       justify-content: space-between;
       color: white;
       text-align: center;
+    }
+
+    /* Header Styles */
+    header {
+      background-color: black;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    header h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      color: white;
+      font-size: 4vw; /* Responsive font size based on viewport */
+      margin: 0;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 6vw; /* Adjust font size on smaller screens */
+      }
     }
 
     .main-content {
@@ -151,6 +172,12 @@
 </head>
 <body>
 
+  <!-- Header Section -->
+  <header>
+    <h1>Lue Bason</h1>
+  </header>
+
+  <!-- Main Content Section -->
   <div class="main-content">
     <div class="coming-soon-container">
       <div class="coming-soon-text">
@@ -169,6 +196,7 @@
     </div>
   </div>
 
+  <!-- Footer Section -->
   <footer>
     <div class="icon-bar">
       <a href="https://www.youtube.com/channel/UCBDdan71rYFXtn0HCyUNDjw" target="_blank"><i class="fab fa-youtube"></i></a>
