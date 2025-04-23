@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lue Bason</title>
   <link rel="icon" href="https://github.com/luebason/luebason/blob/main/fivvi.png?raw=true" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     * {
@@ -34,17 +37,18 @@
       top: 0;
       left: 0;
       width: 100%;
-      background-color: rgba(0, 0, 0, 0.25); /* More transparent black */
+      background-color: rgba(0, 0, 0, 0.4); /* Transparent black */
       padding: 20px 0;
-      z-index: 1000; /* Ensure header is always on top */
+      z-index: 1000;
     }
 
     header h1 {
-      font-family: 'Bebas Neue', sans-serif; /* Font unchanged */
+      font-family: 'Bebas Neue', sans-serif;
       color: white;
       font-size: 36px;
       margin: 0;
       text-align: center;
+      text-transform: uppercase; /* Force ALL CAPS */
     }
 
     .main-content {
@@ -57,7 +61,6 @@
       margin-top: 100px;
     }
 
-    /* Circular text effect */
     .coming-soon-container {
       position: relative;
       width: 300px;
@@ -101,8 +104,12 @@
     .coming-soon-text span:nth-child(12) { transform: rotate(330deg) translateY(-120px); }
 
     @keyframes rotate-text {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
     }
 
     .icon-bar {
