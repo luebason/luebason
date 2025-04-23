@@ -10,17 +10,20 @@
       box-sizing: border-box;
     }
 
-    body {
+    html, body {
       margin: 0;
       padding: 0;
+      height: 100%;
       font-family: Arial, sans-serif;
+    }
+
+    body {
       background: url('https://github.com/luebason/luebason/blob/main/BG1.jpg?raw=true') no-repeat center center fixed;
       background-size: cover;
-      color: white;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      height: 100vh;
+      color: white;
       text-align: center;
     }
 
@@ -34,6 +37,7 @@
       gap: 30px;
       padding: 20px;
       background-color: rgba(0, 0, 0, 0.4);
+      flex-wrap: wrap;
     }
 
     .icon-bar a {
@@ -45,6 +49,17 @@
     .icon-bar a:hover {
       transform: scale(1.2);
       color: #ccc;
+    }
+
+    @media (max-width: 600px) {
+      .icon-bar {
+        gap: 20px;
+        padding: 16px;
+      }
+
+      .icon-bar a {
+        font-size: 20px;
+      }
     }
   </style>
 </head>
