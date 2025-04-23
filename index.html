@@ -37,7 +37,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      background-color: rgba(0, 0, 0, 0.4); /* Transparent black */
+      background-color: rgba(0, 0, 0, 0.4);
       padding: 20px 0;
       z-index: 1000;
     }
@@ -48,7 +48,7 @@
       font-size: 36px;
       margin: 0;
       text-align: center;
-      text-transform: uppercase; /* Force ALL CAPS */
+      text-transform: uppercase;
     }
 
     .main-content {
@@ -112,10 +112,28 @@
       }
     }
 
+    .icon-bar {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 20px;
+      flex-wrap: wrap;
+    }
+
+    .icon-bar a {
+      color: white;
+      font-size: 24px;
+      transition: transform 0.2s, color 0.3s;
+    }
+
+    .icon-bar a:hover {
+      transform: scale(1.2);
+      color: #ccc;
+    }
+
     .legal-footer {
       padding: 10px 20px 30px;
       font-size: 12px;
-      background-color: rgba(0, 0, 0, 0.3);
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -134,6 +152,15 @@
     }
 
     @media (max-width: 600px) {
+      .icon-bar {
+        gap: 20px;
+        padding: 16px;
+      }
+
+      .icon-bar a {
+        font-size: 20px;
+      }
+
       .legal-footer {
         font-size: 8px;
         gap: 15px;
@@ -171,25 +198,23 @@
     </div>
   </div>
 
- <footer>
-  <!-- Social Links (no bar) -->
-  <div style="text-align: center; padding: 20px;">
-    <a href="https://www.youtube.com/channel/UCBDdan71rYFXtn0HCyUNDjw" target="_blank"><i class="fab fa-youtube" style="color:white; font-size: 24px; margin: 0 15px;"></i></a>
-    <a href="https://open.spotify.com/artist/2mqKQs2rda8YbfITznRl1t?si=l8ZOQlg6TmK1AisCUVa0Rg" target="_blank"><i class="fab fa-spotify" style="color:white; font-size: 24px; margin: 0 15px;"></i></a>
-    <a href="https://music.apple.com/de/artist/lue-bason/1548498115?l=en-GB" target="_blank"><i class="fab fa-apple" style="color:white; font-size: 24px; margin: 0 15px;"></i></a>
-    <a href="https://www.instagram.com/loudgio/" target="_blank"><i class="fab fa-instagram" style="color:white; font-size: 24px; margin: 0 15px;"></i></a>
-    <a href="https://www.tiktok.com/@luebason" target="_blank"><i class="fab fa-tiktok" style="color:white; font-size: 24px; margin: 0 15px;"></i></a>
-    <a href="https://linktr.ee/luebason" target="_blank"><i class="fas fa-eye" style="color:white; font-size: 24px; margin: 0 15px;"></i></a>
-  </div>
+  <footer>
+    <div class="icon-bar">
+      <a href="https://www.youtube.com/channel/UCBDdan71rYFXtn0HCyUNDjw" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://open.spotify.com/artist/2mqKQs2rda8YbfITznRl1t?si=l8ZOQlg6TmK1AisCUVa0Rg" target="_blank"><i class="fab fa-spotify"></i></a>
+      <a href="https://music.apple.com/de/artist/lue-bason/1548498115?l=en-GB" target="_blank"><i class="fab fa-apple"></i></a>
+      <a href="https://www.instagram.com/loudgio/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@luebason" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://linktr.ee/luebason" target="_blank"><i class="fas fa-eye"></i></a>
+    </div>
 
-  <!-- Legal Links (no bar) -->
-  <div class="legal-footer">
-    <a href="terms.html" target="_blank">TERMS</a>
-    <a href="privacy.html" target="_blank">PRIVACY</a>
-    <a href="do-not-sell.html" target="_blank">DO NOT SELL MY PERSONAL INFORMATION</a>
-    <a href="cookies.html" target="_blank">COOKIE CHOICES</a>
-  </div>
-</footer>
+    <div class="legal-footer">
+      <a href="terms.html" target="_blank">TERMS</a>
+      <a href="privacy.html" target="_blank">PRIVACY</a>
+      <a href="do-not-sell.html" target="_blank">DO NOT SELL MY PERSONAL INFORMATION</a>
+      <a href="cookies.html" target="_blank">COOKIE CHOICES</a>
+    </div>
+  </footer>
 
 </body>
 </html>
