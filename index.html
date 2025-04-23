@@ -99,6 +99,33 @@
       border-color: white;
     }
 
+    /* Coming Soon Circle Animation */
+    .coming-soon {
+      position: relative;
+      font-size: 24px;
+      font-weight: bold;
+      width: 200px;
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: rotateText 5s linear infinite;
+    }
+
+    .coming-soon span {
+      position: absolute;
+      transform-origin: center center;
+    }
+
+    @keyframes rotateText {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
     @media (max-width: 600px) {
       .icon-bar {
         gap: 20px;
@@ -121,6 +148,9 @@
 
   <div class="main-content">
     <div class="loading-container"></div>
+    <div class="coming-soon">
+      <span>COMING SOON</span>
+    </div>
   </div>
 
   <footer>
