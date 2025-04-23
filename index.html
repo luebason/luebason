@@ -4,84 +4,61 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lue Bason</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
-      background-color: black;
+      background: url('https://github.com/luebason/luebason/blob/main/BG1.jpg?raw=true') no-repeat center center fixed;
+      background-size: cover;
       color: white;
       display: flex;
-      justify-content: center;
-      align-items: center;
+      flex-direction: column;
+      justify-content: space-between;
       height: 100vh;
       text-align: center;
-      overflow: hidden;
     }
 
-    .container {
+    .spacer {
+      flex: 1;
+    }
+
+    .icon-bar {
       display: flex;
-      flex-direction: column;
-      gap: 15px;
+      justify-content: center;
+      gap: 30px;
       padding: 20px;
-      background-image: url('https://raw.githubusercontent.com/luebason/luebason/main/BG1.jpg');
-      background-size: cover; /* Full screen background image */
-      background-position: center;
-      background-repeat: no-repeat;
-      width: 100%; /* Full width */
-      height: 100%; /* Full height */
-      position: absolute; /* Make it cover the entire page */
-      top: 0;
-      left: 0;
-      z-index: -1; /* Keep the image behind the buttons */
+      background-color: rgba(0, 0, 0, 0.4);
     }
 
-    .button-container {
-      position: relative; /* To layer on top of the background */
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      padding: 20px;
-      text-align: center;
-      z-index: 1;
-    }
-
-    a {
-      text-decoration: none;
+    .icon-bar a {
       color: white;
-      background-color: #1c1c1c;
-      padding: 12px 24px;
-      border: 1px solid #fff;
-      border-radius: 6px;
-      font-size: 16px;
-      transition: background-color 0.3s, transform 0.2s;
-      width: 200px; /* Fixed button width */
-      display: inline-block; /* Make sure all buttons have same width */
-      text-align: center;
+      font-size: 24px;
+      transition: transform 0.2s, color 0.3s;
     }
 
-    a:hover {
-      background-color: white;
-      color: black;
-      transform: scale(1.05);
-    }
-
-    @media (max-width: 500px) {
-      a {
-        font-size: 14px;
-        padding: 10px 20px;
-      }
+    .icon-bar a:hover {
+      transform: scale(1.2);
+      color: #ccc;
     }
   </style>
 </head>
 <body>
-  <div class="container"></div> <!-- Full screen background image -->
-  <div class="button-container">
-    <a href="https://www.youtube.com/channel/UCBDdan71rYFXtn0HCyUNDjw" target="_blank">YouTube</a>
-    <a href="https://open.spotify.com/artist/2mqKQs2rda8YbfITznRl1t?si=l8ZOQlg6TmK1AisCUVa0Rg" target="_blank">Spotify</a>
-    <a href="https://music.apple.com/de/artist/lue-bason/1548498115?l=en-GB" target="_blank">Apple Music</a>
-    <a href="https://www.instagram.com/loudgio/" target="_blank">Instagram</a>
-    <a href="https://www.tiktok.com/@luebason" target="_blank">TikTok</a>
-  </div>
+
+  <div class="spacer"></div>
+
+  <footer class="icon-bar">
+    <a href="https://www.youtube.com/channel/UCBDdan71rYFXtn0HCyUNDjw" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://open.spotify.com/artist/2mqKQs2rda8YbfITznRl1t?si=l8ZOQlg6TmK1AisCUVa0Rg" target="_blank"><i class="fab fa-spotify"></i></a>
+    <a href="https://music.apple.com/de/artist/lue-bason/1548498115?l=en-GB" target="_blank"><i class="fab fa-apple"></i></a>
+    <a href="https://www.instagram.com/loudgio/" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.tiktok.com/@luebason" target="_blank"><i class="fab fa-tiktok"></i></a>
+  </footer>
+
 </body>
 </html>
