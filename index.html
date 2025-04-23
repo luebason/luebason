@@ -36,25 +36,31 @@
       position: relative;
     }
 
-    .loading-container {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 50px;
-      height: 50px;
-      border: 5px solid rgba(255, 255, 255, 0.5);
-      border-top: 5px solid white;
+    /* Circular text animation */
+    .coming-soon-container {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       border-radius: 50%;
-      animation: spin 2s linear infinite;
     }
 
-    @keyframes spin {
+    .coming-soon {
+      position: absolute;
+      font-size: 24px;
+      font-weight: bold;
+      white-space: nowrap;
+      animation: rotate-text 5s linear infinite;
+    }
+
+    @keyframes rotate-text {
       0% {
-        transform: translate(-50%, -50%) rotate(0deg);
+        transform: rotate(0deg);
       }
       100% {
-        transform: translate(-50%, -50%) rotate(360deg);
+        transform: rotate(360deg);
       }
     }
 
@@ -99,33 +105,6 @@
       border-color: white;
     }
 
-    /* Coming Soon Circle Animation */
-    .coming-soon {
-      position: relative;
-      font-size: 24px;
-      font-weight: bold;
-      width: 200px;
-      height: 200px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      animation: rotateText 5s linear infinite;
-    }
-
-    .coming-soon span {
-      position: absolute;
-      transform-origin: center center;
-    }
-
-    @keyframes rotateText {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-
     @media (max-width: 600px) {
       .icon-bar {
         gap: 20px;
@@ -147,9 +126,8 @@
 <body>
 
   <div class="main-content">
-    <div class="loading-container"></div>
-    <div class="coming-soon">
-      <span>COMING SOON</span>
+    <div class="coming-soon-container">
+      <div class="coming-soon">COMING SOON</div>
     </div>
   </div>
 
