@@ -16,7 +16,7 @@
       align-items: center;
       height: 100vh;
       text-align: center;
-      overflow: hidden; /* Optional: prevent scrollbars */
+      overflow: hidden; /* Prevent scrollbars */
     }
 
     .container {
@@ -25,13 +25,18 @@
       gap: 15px;
       padding: 20px;
       background-image: url('https://raw.githubusercontent.com/luebason/luebason/main/BG1.jpg');
-      background-size: cover; /* Make the background image cover the entire screen */
+      background-size: cover; /* Make background image cover the screen */
       background-position: center;
       background-repeat: no-repeat;
-      width: 100vw; /* Ensure the container spans the full width */
-      height: 100vh; /* Ensure the container spans the full height */
-      border-radius: 10px; /* Optional: add rounded corners */
-      backdrop-filter: blur(5px); /* Optional: adds a blur effect behind the buttons */
+      width: 80vw; /* Adjusted for sleekness */
+      height: auto; /* Height should adjust based on content */
+      max-width: 600px; /* Limit the max width for a neat look */
+      max-height: 90vh; /* Ensure the container doesn't overflow */
+      border-radius: 10px; /* Optional: adds rounded corners */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; /* Ensures buttons are centered */
     }
 
     a {
