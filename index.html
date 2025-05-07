@@ -31,6 +31,7 @@
       text-align: center;
     }
 
+    /* Header Styling */
     header {
       position: fixed;
       top: 0;
@@ -60,39 +61,55 @@
       margin-top: 100px;
     }
 
-    .instagram-slider {
-      backdrop-filter: blur(15px);
-      background-color: rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      padding: 20px;
-      overflow-x: auto;
+    .coming-soon-container {
+      position: relative;
+      width: 300px;
+      height: 300px;
       display: flex;
-      gap: 15px;
-      max-width: 90vw;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      animation: rotate-text 10s linear infinite;
     }
 
-    .instagram-slider a {
-      flex: 0 0 auto;
-      width: 150px;
-      height: 150px;
-      border-radius: 16px;
-      overflow: hidden;
-      scroll-snap-align: start;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      transition: transform 0.3s;
-    }
-
-    .instagram-slider a:hover {
-      transform: scale(1.05);
-    }
-
-    .instagram-slider img {
+    .coming-soon-text {
+      position: absolute;
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      display: block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: rotate(90deg);
+    }
+
+    .coming-soon-text span {
+      position: absolute;
+      font-size: 24px;
+      font-weight: bold;
+      transform-origin: center center;
+      white-space: nowrap;
+    }
+
+    .coming-soon-text span:nth-child(1) { transform: rotate(0deg) translateY(-120px); }
+    .coming-soon-text span:nth-child(2) { transform: rotate(30deg) translateY(-120px); }
+    .coming-soon-text span:nth-child(3) { transform: rotate(60deg) translateY(-120px); }
+    .coming-soon-text span:nth-child(4) { transform: rotate(90deg) translateY(-120px); }
+    .coming-soon-text span:nth-child(5) { transform: rotate(120deg) translateY(-120px); }
+    .coming-soon-text span:nth-child(6) { transform: rotate(150deg) translateY(-120px); }
+    .coming-soon-text span:nth-child(7) { transform: rotate(180deg) translateY(-120px); }
+    .coming-soon-text span:nth-child(8) { transform: rotate(210deg) translateY(-120px); }
+    .coming-soon-text span:nth-child(9) { transform: rotate(240deg) translateY(-120px); }
+    .coming-soon-text span:nth-child(10) { transform: rotate(270deg) translateY(-120px); }
+    .coming-soon-text span:nth-child(11) { transform: rotate(300deg) translateY(-120px); }
+    .coming-soon-text span:nth-child(12) { transform: rotate(330deg) translateY(-120px); }
+
+    @keyframes rotate-text {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
     }
 
     .icon-bar {
@@ -158,17 +175,26 @@
 </head>
 <body>
 
+  <!-- Header -->
   <header>
     <h1>Lue Bason</h1>
   </header>
 
   <div class="main-content">
-    <div class="instagram-slider">
-      <a href="https://www.instagram.com/loudgio/" target="_blank"><img src="https://via.placeholder.com/150/ffffff/000000?text=Post+1" alt="Instagram Post 1"></a>
-      <a href="https://www.instagram.com/loudgio/" target="_blank"><img src="https://via.placeholder.com/150/ffffff/000000?text=Post+2" alt="Instagram Post 2"></a>
-      <a href="https://www.instagram.com/loudgio/" target="_blank"><img src="https://via.placeholder.com/150/ffffff/000000?text=Post+3" alt="Instagram Post 3"></a>
-      <a href="https://www.instagram.com/loudgio/" target="_blank"><img src="https://via.placeholder.com/150/ffffff/000000?text=Post+4" alt="Instagram Post 4"></a>
-      <a href="https://www.instagram.com/loudgio/" target="_blank"><img src="https://via.placeholder.com/150/ffffff/000000?text=Post+5" alt="Instagram Post 5"></a>
+    <div class="coming-soon-container">
+      <div class="coming-soon-text">
+        <span>C</span>
+        <span>O</span>
+        <span>M</span>
+        <span>I</span>
+        <span>N</span>
+        <span>G</span>
+        <span>&nbsp;</span>
+        <span>S</span>
+        <span>O</span>
+        <span>O</span>
+        <span>N</span>
+      </div>
     </div>
   </div>
 
@@ -185,4 +211,10 @@
     <div class="legal-footer">
       <a href="terms.html" target="_blank">TERMS</a>
       <a href="privacy.html" target="_blank">PRIVACY</a>
-      <
+      <a href="do-not-sell.html" target="_blank">DO NOT SELL MY PERSONAL INFORMATION</a>
+      <a href="cookies.html" target="_blank">COOKIE CHOICES</a>
+    </div>
+  </footer>
+
+</body>
+</html>
