@@ -57,59 +57,24 @@
       justify-content: center;
       align-items: center;
       padding: 20px;
-      position: relative;
       margin-top: 100px;
     }
 
-    .coming-soon-container {
-      position: relative;
-      width: 300px;
-      height: 300px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 50%;
-      animation: rotate-text 10s linear infinite;
+    .linktree-frame-container {
+      width: 90%;
+      max-width: 400px;
+      height: 500px;
+      background-color: rgba(0, 0, 0, 0.3);
+      border-radius: 20px;
+      overflow: hidden;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
     }
 
-    .coming-soon-text {
-      position: absolute;
+    .linktree-frame-container iframe {
       width: 100%;
       height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transform: rotate(90deg);
-    }
-
-    .coming-soon-text span {
-      position: absolute;
-      font-size: 24px;
-      font-weight: bold;
-      transform-origin: center center;
-      white-space: nowrap;
-    }
-
-    .coming-soon-text span:nth-child(1) { transform: rotate(0deg) translateY(-120px); }
-    .coming-soon-text span:nth-child(2) { transform: rotate(30deg) translateY(-120px); }
-    .coming-soon-text span:nth-child(3) { transform: rotate(60deg) translateY(-120px); }
-    .coming-soon-text span:nth-child(4) { transform: rotate(90deg) translateY(-120px); }
-    .coming-soon-text span:nth-child(5) { transform: rotate(120deg) translateY(-120px); }
-    .coming-soon-text span:nth-child(6) { transform: rotate(150deg) translateY(-120px); }
-    .coming-soon-text span:nth-child(7) { transform: rotate(180deg) translateY(-120px); }
-    .coming-soon-text span:nth-child(8) { transform: rotate(210deg) translateY(-120px); }
-    .coming-soon-text span:nth-child(9) { transform: rotate(240deg) translateY(-120px); }
-    .coming-soon-text span:nth-child(10) { transform: rotate(270deg) translateY(-120px); }
-    .coming-soon-text span:nth-child(11) { transform: rotate(300deg) translateY(-120px); }
-    .coming-soon-text span:nth-child(12) { transform: rotate(330deg) translateY(-120px); }
-
-    @keyframes rotate-text {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
+      border: none;
     }
 
     .icon-bar {
@@ -170,6 +135,10 @@
       header h1 {
         font-size: 28px;
       }
+
+      .linktree-frame-container {
+        height: 400px;
+      }
     }
   </style>
 </head>
@@ -181,20 +150,8 @@
   </header>
 
   <div class="main-content">
-    <div class="coming-soon-container">
-      <div class="coming-soon-text">
-        <span>C</span>
-        <span>O</span>
-        <span>M</span>
-        <span>I</span>
-        <span>N</span>
-        <span>G</span>
-        <span>&nbsp;</span>
-        <span>S</span>
-        <span>O</span>
-        <span>O</span>
-        <span>N</span>
-      </div>
+    <div class="linktree-frame-container">
+      <iframe src="https://linktr.ee/luebason"></iframe>
     </div>
   </div>
 
