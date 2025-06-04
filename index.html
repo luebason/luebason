@@ -28,28 +28,28 @@
       justify-content: space-between;
       color: white;
       text-align: center;
-      position: relative;
+      overflow-x: hidden;
+    }
+
+    .video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
       overflow: hidden;
     }
 
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      z-index: -1;
-    }
-
-    iframe.background-video {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 100vh;
+    .video-bg iframe {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       width: 100vw;
-      object-fit: cover;
-      z-index: -1;
+      height: 56.25vw;
+      min-height: 100vh;
+      min-width: 177.77vh;
       pointer-events: none;
     }
 
@@ -158,38 +158,32 @@
       header h1 {
         font-size: 28px;
       }
-
-      .discover-button {
-        font-size: 22px;
-        padding: 8px 24px;
-      }
-
-      /* Fix video for mobile: full screen */
-      iframe.background-video {
-        position: fixed !important;
-        top: 0 !important;
-        left: 0 !important;
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover !important;
-      }
     }
   </style>
 </head>
 <body>
 
   <!-- Background Video -->
-  <iframe class="background-video" src="https://player.vimeo.com/video/1090590177?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+  <div class="video-bg">
+    <iframe 
+      src="https://player.vimeo.com/video/1090590177?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1" 
+      frameborder="0" 
+      allow="autoplay; fullscreen" 
+      allowfullscreen>
+    </iframe>
+  </div>
 
   <!-- Header -->
   <header>
     <h1>Lue Bason</h1>
   </header>
 
+  <!-- Main Content -->
   <div class="main-content">
-    <a class="discover-button" href="https://linktr.ee/luebason" target="_blank">Discover</a>
+    <a href="#" class="discover-button">Discover</a>
   </div>
 
+  <!-- Footer -->
   <footer>
     <div class="icon-bar">
       <a href="https://www.youtube.com/channel/UCBDdan71rYFXtn0HCyUNDjw" target="_blank"><i class="fab fa-youtube"></i></a>
