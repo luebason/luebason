@@ -158,6 +158,11 @@
       header h1 {
         font-size: 28px;
       }
+
+      .discover-button {
+        font-size: 22px;
+        padding: 8px 24px;
+      }
     }
   </style>
 </head>
@@ -165,12 +170,7 @@
 
   <!-- Background Video -->
   <div class="video-bg">
-    <iframe 
-      src="https://player.vimeo.com/video/1090590177?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1" 
-      frameborder="0" 
-      allow="autoplay; fullscreen" 
-      allowfullscreen>
-    </iframe>
+    <iframe src="https://player.vimeo.com/video/1090590177?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
   </div>
 
   <!-- Header -->
@@ -178,12 +178,12 @@
     <h1>Lue Bason</h1>
   </header>
 
-  <!-- Main Content -->
+  <!-- Main Content with Discover Button -->
   <div class="main-content">
-    <a href="#" class="discover-button">Discover</a>
+    <a class="discover-button" href="https://linktr.ee/luebason" target="_blank">Discover</a>
   </div>
 
-  <!-- Footer -->
+  <!-- Footer (optional if you include icons and links here) -->
   <footer>
     <div class="icon-bar">
       <a href="https://www.youtube.com/channel/UCBDdan71rYFXtn0HCyUNDjw" target="_blank"><i class="fab fa-youtube"></i></a>
@@ -201,17 +201,6 @@
       <a href="cookies.html" target="_blank">COOKIE CHOICES</a>
     </div>
   </footer>
-
-  <!-- Fix for Discover button -->
-  <script>
-    document.querySelector('.discover-button').addEventListener('click', function (e) {
-      e.preventDefault();
-      window.scrollTo({
-        top: document.body.scrollHeight,
-        behavior: 'smooth'
-      });
-    });
-  </script>
 
 </body>
 </html>
