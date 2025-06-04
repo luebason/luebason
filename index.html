@@ -19,28 +19,40 @@
       padding: 0;
       height: 100%;
       font-family: Arial, sans-serif;
-      overflow: hidden;
     }
 
     body {
-      color: white;
-      text-align: center;
+      background: black;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
     }
 
-    video#bg-video {
+    body::before {
+      content: "";
       position: fixed;
       top: 0;
       left: 0;
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
+      height: 100%;
+      width: 100%;
       z-index: -1;
     }
 
-    /* Header Styling */
+    iframe.background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      object-fit: cover;
+      z-index: -1;
+      pointer-events: none;
+    }
+
     header {
       position: fixed;
       top: 0;
@@ -65,26 +77,26 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      padding: 20px;
       position: relative;
       margin-top: 100px;
     }
 
-    /* DISCOVER button replacing the animation */
     .discover-button {
       font-family: 'Bebas Neue', sans-serif;
       font-size: 28px;
-      color: rgba(255, 255, 255, 0.8);
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.85);
+      background: transparent;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      padding: 10px 30px;
+      border-radius: 30px;
       text-decoration: none;
-      border: 2px solid rgba(255, 255, 255, 0.5);
-      padding: 12px 30px;
-      border-radius: 5px;
-      background-color: rgba(255, 255, 255, 0.05);
-      transition: background-color 0.3s, color 0.3s;
-      user-select: none;
-      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
     }
+
     .discover-button:hover {
-      background-color: rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.1);
       color: white;
     }
 
@@ -128,11 +140,6 @@
     }
 
     @media (max-width: 600px) {
-      .discover-button {
-        font-size: 22px;
-        padding: 10px 24px;
-      }
-
       .icon-bar {
         gap: 20px;
         padding: 16px;
@@ -151,16 +158,28 @@
       header h1 {
         font-size: 28px;
       }
+
+      .discover-button {
+        font-size: 22px;
+        padding: 8px 24px;
+      }
+
+      /* Fix video for mobile: full screen */
+      iframe.background-video {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+      }
     }
   </style>
 </head>
 <body>
 
   <!-- Background Video -->
-  <video id="bg-video" autoplay muted loop playsinline>
-    <source src="https://vod-progressive.akamaized.net/exp=1685890030~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F1090%2F9%2F1090590177%2F4005184697.mp4~hmac=f34abf961056e83d7d7f007f1c9a89bdf7d7ef1cde7eeae8a900dbe00891d251/vimeo-prod-skyfire-std-us/01/1090/9/1090590177/4005184697.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
+  <iframe class="background-video" src="https://player.vimeo.com/video/1090590177?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
   <!-- Header -->
   <header>
@@ -168,24 +187,24 @@
   </header>
 
   <div class="main-content">
-    <a href="https://linktr.ee/luebason" class="discover-button" aria-label="Discover">DISCOVER</a>
+    <a class="discover-button" href="https://linktr.ee/luebason" target="_blank">Discover</a>
   </div>
 
   <footer>
     <div class="icon-bar">
-      <a href="https://www.youtube.com/channel/UCBDdan71rYFXtn0HCyUNDjw" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
-      <a href="https://open.spotify.com/artist/2mqKQs2rda8YbfITznRl1t?si=l8ZOQlg6TmK1AisCUVa0Rg" target="_blank" rel="noopener noreferrer"><i class="fab fa-spotify"></i></a>
-      <a href="https://music.apple.com/de/artist/lue-bason/1548498115?l=en-GB" target="_blank" rel="noopener noreferrer"><i class="fab fa-apple"></i></a>
-      <a href="https://www.instagram.com/loudgio/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.tiktok.com/@luebason" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
-      <a href="https://linktr.ee/luebason" target="_blank" rel="noopener noreferrer"><i class="fas fa-eye"></i></a>
+      <a href="https://www.youtube.com/channel/UCBDdan71rYFXtn0HCyUNDjw" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://open.spotify.com/artist/2mqKQs2rda8YbfITznRl1t?si=l8ZOQlg6TmK1AisCUVa0Rg" target="_blank"><i class="fab fa-spotify"></i></a>
+      <a href="https://music.apple.com/de/artist/lue-bason/1548498115?l=en-GB" target="_blank"><i class="fab fa-apple"></i></a>
+      <a href="https://www.instagram.com/loudgio/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@luebason" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://linktr.ee/luebason" target="_blank"><i class="fas fa-eye"></i></a>
     </div>
 
     <div class="legal-footer">
-      <a href="terms.html" target="_blank" rel="noopener noreferrer">TERMS</a>
-      <a href="privacy.html" target="_blank" rel="noopener noreferrer">PRIVACY</a>
-      <a href="do-not-sell.html" target="_blank" rel="noopener noreferrer">DO NOT SELL MY PERSONAL INFORMATION</a>
-      <a href="cookies.html" target="_blank" rel="noopener noreferrer">COOKIE CHOICES</a>
+      <a href="terms.html" target="_blank">TERMS</a>
+      <a href="privacy.html" target="_blank">PRIVACY</a>
+      <a href="do-not-sell.html" target="_blank">DO NOT SELL MY PERSONAL INFORMATION</a>
+      <a href="cookies.html" target="_blank">COOKIE CHOICES</a>
     </div>
   </footer>
 
