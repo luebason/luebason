@@ -22,34 +22,34 @@
     }
 
     body {
-      background-size: cover;
+      background: black;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       color: white;
       text-align: center;
-      overflow-x: hidden;
-    }
-
-    .video-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: -1;
+      position: relative;
       overflow: hidden;
     }
 
-    .video-bg iframe {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+    }
+
+    iframe.background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
       width: 100vw;
-      height: 56.25vw;
-      min-height: 100vh;
-      min-width: 177.77vh;
+      object-fit: cover;
+      z-index: -1;
       pointer-events: none;
     }
 
@@ -80,6 +80,24 @@
       padding: 20px;
       position: relative;
       margin-top: 100px;
+    }
+
+    .discover-button {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 28px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.85);
+      background: transparent;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      padding: 10px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .discover-button:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
     }
 
     .icon-bar {
@@ -140,20 +158,18 @@
       header h1 {
         font-size: 28px;
       }
+
+      .discover-button {
+        font-size: 22px;
+        padding: 8px 24px;
+      }
     }
   </style>
 </head>
 <body>
 
   <!-- Background Video -->
-  <div class="video-bg">
-    <iframe 
-      src="https://player.vimeo.com/video/1090590177?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1" 
-      frameborder="0" 
-      allow="autoplay; fullscreen" 
-      allowfullscreen>
-    </iframe>
-  </div>
+  <iframe class="background-video" src="https://player.vimeo.com/video/1090590177?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
   <!-- Header -->
   <header>
@@ -161,7 +177,7 @@
   </header>
 
   <div class="main-content">
-    <!-- Removed COMING SOON animation -->
+    <a class="discover-button" href="https://linktr.ee/luebason" target="_blank">Discover</a>
   </div>
 
   <footer>
