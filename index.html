@@ -202,5 +202,16 @@
     </div>
   </footer>
 
+  <!-- Fix for Discover button -->
+  <script>
+    document.querySelector('.discover-button').addEventListener('click', function (e) {
+      e.preventDefault();
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+
 </body>
 </html>
